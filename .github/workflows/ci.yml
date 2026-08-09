@@ -1,0 +1,13 @@
+name: ci
+on: push
+jobs:
+  pinned:
+    runs-on: ubuntu-latest
+    env:
+      VICTIM_CANARY: ${{ secrets.VICTIM_CANARY }}
+    steps:
+      - uses: arlo-kovac/vfy-subst-355df6@3f6eb95747b6aa88f11fc1f754638b670b317113
+  unpinned_control:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
